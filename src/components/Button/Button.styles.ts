@@ -4,6 +4,13 @@ interface ButtonProps {
   variant?: 'info' | 'danger' | 'success' | 'warning'
 }
 
+interface GradientButtonProps extends ButtonProps {
+	from: string
+	to: string
+  direction: string
+  text?: 'white' | 'dark'
+}
+
 const buttonVariant = (variant: string | undefined) => {
 
   let background: string
@@ -43,4 +50,9 @@ export const StyledButton = styled.button<ButtonProps>`
 	background: ${props => buttonVariant(props.variant)};
 	color: #fff;
 	cursor: pointer;
+`
+
+export const GradientButton = styled(StyledButton)<GradientButtonProps>`
+  background: linear-gradient(${props => props.direction}, ${props => props.from}, ${props => props.to});
+  color: ${props => props?.text === 'dark' ? '#000' : '#fff'}
 `

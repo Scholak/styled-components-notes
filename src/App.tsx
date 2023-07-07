@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledButton } from './components/Button/Button.styles'
+import { GradientButton, StyledButton } from './components/Button/Button.styles'
 
 const App = () => {
   return (
@@ -17,6 +17,15 @@ const App = () => {
 			<br />
 			<br />
 			<StyledButton variant='warning'>warning</StyledButton>
+			<br />
+			<br />
+			<GradientButton
+				direction='to right'
+				from='#1e40af'
+				to='#6b21a8'
+			>
+				gradient button
+			</GradientButton>
 		</div>
 	)
 }

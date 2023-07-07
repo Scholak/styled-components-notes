@@ -50,6 +50,12 @@ export const StyledButton = styled.button<ButtonProps>`
 	background: ${props => buttonVariant(props.variant)};
 	color: #fff;
 	cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+  }
 `
 
 export const GradientButton = styled(StyledButton)<GradientButtonProps>`

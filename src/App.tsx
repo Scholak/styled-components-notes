@@ -23,6 +23,7 @@ const App = () => {
 				direction='to right'
 				from='#1e40af'
 				to='#6b21a8'
+        type='reset'
 			>
 				gradient button
 			</GradientButton>

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface ButtonProps {
   variant?: 'info' | 'danger' | 'success' | 'warning'
+  type?: 'submit' | 'reset'
 }
 
 interface GradientButtonProps extends ButtonProps {
@@ -39,7 +40,9 @@ const buttonVariant = (variant: string | undefined) => {
   return background
 }
 
-export const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled.button.attrs(props => ({
+	type: props.type ? props.type : 'submit',
+}))<ButtonProps>`
 	border: none;
 	outline: none;
 
@@ -50,12 +53,12 @@ export const StyledButton = styled.button<ButtonProps>`
 	background: ${props => buttonVariant(props.variant)};
 	color: #fff;
 	cursor: pointer;
-  transition: all .3s;
+	transition: all 0.3s;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
-  }
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	}
 `
 
 export const GradientButton = styled(StyledButton)<GradientButtonProps>`

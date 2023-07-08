@@ -1,5 +1,6 @@
 import React from 'react'
 import { GradientButton, StyledButton } from './components/Button/Button.styles'
+import { Box } from './components/Box/Box.styles'
 
 const App = () => {
   return (
@@ -27,6 +28,10 @@ const App = () => {
 			>
 				gradient button
 			</GradientButton>
+			<br />
+			<br />
+			<br />
+			<Box></Box>
 		</div>
 	)
 }
